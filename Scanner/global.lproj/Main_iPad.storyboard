@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EY6-Gh-pco">
+    <dependencies>
+        <deployment version="2048" identifier="iOS"/>
+        <development version="6300" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="TZ9-Co-awr">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="EY6-Gh-pco" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tBM-K1-0Ax"/>
+                        <viewControllerLayoutGuide type="bottom" id="oUe-Y0-6OH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Ej-HE-oIC" customClass="EAGLView" customModule="Scanner">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Connect Structure Sensor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjL-H2-0Mq" userLabel="Label - App Status Message">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                    <real key="isElement" value="0.0"/>
+                                </accessibility>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="36"/>
+                                <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWB-9F-hbD" userLabel="Label - Tracking Lost">
+                                <rect key="frame" x="0.0" y="637" width="1024" height="111"/>
+                                <color key="backgroundColor" red="0.0" green="0.76471763839999995" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <string key="text">Tracking lost!
+Try to re-align or press reset.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lM8-b7-SCS" userLabel="Button - Scan">
+                                <rect key="frame" x="876" y="320" width="128" height="128"/>
+                                <state key="normal" image="startScanButton">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="scanButtonPressed:" destination="EY6-Gh-pco" eventType="touchUpInside" id="5X2-bS-p4D"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFc-KP-XJY" userLabel="Button - Done">
+                                <rect key="frame" x="876" y="320" width="128" height="128"/>
+                                <state key="normal" image="doneButton">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="EY6-Gh-pco" eventType="touchUpInside" id="kt4-Na-QQL"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFW-LB-YEe">
+                                <rect key="frame" x="902" y="269" width="77" height="64"/>
+                                <state key="normal" image="resetScanButton">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="EY6-Gh-pco" eventType="touchUpInside" id="f6d-7m-Ke1"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WLv-2M-LDt">
+                                <rect key="frame" x="692" y="35" width="312" height="156"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUy-CF-jHV" userLabel="Switch old - new tracker">
+                                        <rect key="frame" x="48" y="6" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.0" green="0.40308487110000002" blue="0.52710288199999999" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="enableNewTrackerSwitchChanged:" destination="EY6-Gh-pco" eventType="valueChanged" id="p1T-V2-o6l"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Tracker (RGBD)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAf-ig-9pg">
+                                        <rect key="frame" x="112" y="12" width="158" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Low" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1Z-Uk-nhj">
+                                        <rect key="frame" x="5" y="49" width="33" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJT-3f-rDo" userLabel="Switch low - high resolution color">
+                                        <rect key="frame" x="48" y="43" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.0" green="0.40308487110000002" blue="0.52710288199999999" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="enableHighResolutionColorSwitchChanged:" destination="EY6-Gh-pco" eventType="valueChanged" id="4xO-6O-kAc"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Resolution Color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="037-Tn-DZZ">
+                                        <rect key="frame" x="112" y="48" width="168" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Old" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ7-Nh-Y20">
+                                        <rect key="frame" x="11" y="86" width="27" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mfD-rd-5jR" userLabel="Switch old - new mapper">
+                                        <rect key="frame" x="48" y="80" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.0" green="0.40308487110000002" blue="0.52710288199999999" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="enableNewMapperSwitchChanged:" destination="EY6-Gh-pco" eventType="valueChanged" id="B86-1N-CYs"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Mapper" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qg-NL-wW7">
+                                        <rect key="frame" x="113" y="85" width="98" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Low" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXf-RD-vpS">
+                                        <rect key="frame" x="7" y="125" width="31" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jZx-xA-nRq" userLabel="Switch low - high resolution mesh">
+                                        <rect key="frame" x="48" y="119" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.0" green="0.40308487110000002" blue="0.52710288199999999" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="enableHighResMappingSwitchChanged:" destination="EY6-Gh-pco" eventType="valueChanged" id="SIT-gd-QtL"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Resolution Mesh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5p-TZ-jAc">
+                                        <rect key="frame" x="113" y="124" width="167" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Old" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRc-yz-Rfh">
+                                        <rect key="frame" x="11" y="13" width="27" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.76471763839999995" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="8iV-ff-cgP" appends="YES" id="jGI-V9-u33"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="appStatusMessageLabel" destination="PjL-H2-0Mq" id="3qx-rc-Zs0"/>
+                        <outlet property="doneButton" destination="WFc-KP-XJY" id="aat-dT-qcn"/>
+                        <outlet property="resetButton" destination="sFW-LB-YEe" id="2gk-yL-QgA"/>
+                        <outlet property="scanButton" destination="lM8-b7-SCS" id="G6F-9c-mly"/>
+                        <outlet property="trackingLostLabel" destination="cWB-9F-hbD" id="iLc-dk-nFO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hsn-ge-M7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="8iV-ff-cgP">
+                    <connections>
+                        <action selector="pinchGesture:" destination="EY6-Gh-pco" id="DUi-3a-sdr"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="498" y="405"/>
+        </scene>
+        <!--Mesh View Controller-->
+        <scene sceneID="KMU-cT-dfR">
+            <objects>
+                <viewController storyboardIdentifier="MeshViewController" id="AlP-Dd-rCg" customClass="MeshViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FRp-76-fl3"/>
+                        <viewControllerLayoutGuide type="bottom" id="ctc-xP-fUH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7hH-7U-bjv" customClass="EAGLView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Colorizing..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7d-32-paR" userLabel="Label - Structure Message">
+                                <rect key="frame" x="252" y="346" width="520" height="76"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="36"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="b5C-VH-IBd">
+                                <rect key="frame" x="312" y="110" width="400" height="29"/>
+                                <color key="backgroundColor" red="0.0" green="0.76470588240000004" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="X-Ray View"/>
+                                    <segment title="Shaded View"/>
+                                    <segment title="Color View"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="size">
+                                        <size key="value" width="400" height="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="displayControlChanged:" destination="AlP-Dd-rCg" eventType="valueChanged" id="gm9-H1-wis"/>
+                                </connections>
+                            </segmentedControl>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lHf-fZ-Hci">
+                                <rect key="frame" x="2" y="0.0" width="601" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.30315667229999999" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="0.30315667229999999" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Structure Sensor Scanner" id="47x-4H-zL4">
+                                        <barButtonItem key="leftBarButtonItem" title="Scan" id="jV3-2a-YYu">
+                                            <connections>
+                                                <action selector="dismissView:" destination="AlP-Dd-rCg" id="baG-Ki-zSn"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Email" id="CSy-5W-0FU">
+                                            <connections>
+                                                <action selector="emailMesh:" destination="AlP-Dd-rCg" id="m5D-q8-ExB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="PfR-Qr-huL" appends="YES" id="8LX-Wm-y3R"/>
+                            <outletCollection property="gestureRecognizers" destination="4Jg-9t-FHm" appends="YES" id="FVE-dE-GlP"/>
+                            <outletCollection property="gestureRecognizers" destination="U5F-gD-j6H" appends="YES" id="jAe-LD-DrO"/>
+                        </connections>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="displayControl" destination="b5C-VH-IBd" id="2ku-ze-Twa"/>
+                        <outlet property="meshViewerMessageLabel" destination="w7d-32-paR" id="6dh-X3-OYv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tly-Gc-1sS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="PfR-Qr-huL" userLabel="One Finger Pan">
+                    <connections>
+                        <action selector="oneFingerPanGesture:" destination="AlP-Dd-rCg" id="2MS-O1-FNz"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="2" maximumNumberOfTouches="2" id="4Jg-9t-FHm" userLabel="Two Finger Pan">
+                    <connections>
+                        <action selector="twoFingersPanGesture:" destination="AlP-Dd-rCg" id="8u7-a5-EPb"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="U5F-gD-j6H">
+                    <connections>
+                        <action selector="pinchScaleGesture:" destination="AlP-Dd-rCg" id="XcD-zK-vn5"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="846.6796875" y="1250.78125"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="doneButton" width="100" height="100"/>
+        <image name="resetScanButton" width="53" height="50"/>
+        <image name="startScanButton" width="100" height="100"/>
+    </resources>
+</document>
