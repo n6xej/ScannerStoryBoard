@@ -43,11 +43,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//	int numUploads = 5;
-//	for (int meshIndex = 0; meshIndex < numUploads; ++meshIndex)
-//	{
-//		NSLog(@"%d",meshIndex);
-//	}
 	
     _calibrationOverlay = nil;
 
@@ -171,21 +166,13 @@
 
 - (void)presentMeshViewer:(STMesh *)mesh
 {
-	NSLog(@"presentMeshViewer setupGL");
     [_meshViewController setupGL:_display.context];
-	LoggerFlush(LoggerGetDefaultLogger(), TRUE);
 	
-	NSLog(@"presentMeshViewer colorEnabled");
     _meshViewController.colorEnabled = _useColorCamera;
-	LoggerFlush(LoggerGetDefaultLogger(), TRUE);
 	
-	NSLog(@"presentMeshViewer mesh");
     _meshViewController.mesh = mesh;
-	LoggerFlush(LoggerGetDefaultLogger(), TRUE);
-	
-	NSLog(@"presentMeshViewer setCameraProjectionMatrix");
+
     [_meshViewController setCameraProjectionMatrix:_display.depthCameraGLProjectionMatrix];
-	LoggerFlush(LoggerGetDefaultLogger(), TRUE);
     
     // Sample a few points to estimate the volume center
     int totalNumVertices = 0;
@@ -215,16 +202,10 @@
     else
         volumeCenter = GLKVector3MultiplyScalar(_slamState.volumeSizeInMeters, 0.5);
 	
-	NSLog(@"presentMeshViewer resetMeshCenter");
     [_meshViewController resetMeshCenter:volumeCenter];
-	LoggerFlush(LoggerGetDefaultLogger(), TRUE);
-	
-	NSLog(@"presentMeshViewer delegate");
+
     _meshViewController.delegate = self;
-	LoggerFlush(LoggerGetDefaultLogger(), TRUE);
-	
-	NSLog(@"presentMeshViewer presentViewController");
-	LoggerFlush(LoggerGetDefaultLogger(), TRUE);
+
     [self presentViewController:_meshViewController animated:YES completion:^{}];
 }
 
@@ -284,7 +265,6 @@
 
 - (void)enterViewingState
 {
-	NSLog(@"enterViewingState");
     // Cannot be lost in view mode.
     [self hideTrackingErrorMessage];
     
@@ -304,9 +284,9 @@
     [_slamState.mapper finalizeTriangleMesh];
     
     STMesh *mesh = [_slamState.scene lockAndGetSceneMesh];
-	NSLog(@"enterViewingState present MeshView");
+
     [self presentMeshViewer:mesh];
-    NSLog(@"enterViewingState unlock");
+
     [_slamState.scene unlockSceneMesh];
     
     _slamState.scannerState = ScannerStateViewing;

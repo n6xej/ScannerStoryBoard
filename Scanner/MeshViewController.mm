@@ -139,7 +139,6 @@ namespace
     
     self.displayControl.selectedSegmentIndex = 1;
     _renderer->setRenderingMode( MeshRenderer::RenderingModeLightedGray );
-	NSLog(@"mesh view loaded");
 }
 
 - (void)didReceiveMemoryWarning
@@ -198,14 +197,12 @@ namespace
 
 - (void)setCameraProjectionMatrix:(GLKMatrix4)projection
 {
-	NSLog(@"setCameraProjectionMatrix");
     _viewpointController->setCameraProjection(projection);
     _projectionMatrixBeforeUserInteractions = projection;
 }
 
 - (void)resetMeshCenter:(GLKVector3)center
 {
-	NSLog(@"resetMeshCenter");
     _viewpointController->reset();
     _viewpointController->setMeshCenter(center);
     _modelViewMatrixBeforeUserInteractions = _viewpointController->currentGLModelViewMatrix();
@@ -214,14 +211,13 @@ namespace
 - (void)setMesh:(STMesh *)meshRef
 {
     _mesh = meshRef;
-    NSLog(@"setupMesh");
+
     if (meshRef)
     {
         _renderer->uploadMesh(meshRef);
     
         [self trySwitchToColorRenderingMode];
 
-		NSLog(@"setupMesh upload");
         self.needsDisplay = TRUE;
     }
 }
