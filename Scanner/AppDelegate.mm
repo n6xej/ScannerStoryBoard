@@ -45,8 +45,8 @@ void preventApplicationFromStartingInTheBackgroundWhenTheStructureSensorIsPlugge
 {
     preventApplicationFromStartingInTheBackgroundWhenTheStructureSensorIsPlugged();
 
-	LoggerSetupBonjour(NULL, NULL, (__bridge CFStringRef) @"StructureDebuggingService");
-	LogMessage(nil, 1, @"%@", @"Started");
+    //	LoggerSetupBonjour(NULL, NULL, (__bridge CFStringRef) @"StructureDebuggingService");
+    //	LogMessage(nil, 1, @"%@", @"Started");
 	
     if (false)
     {
